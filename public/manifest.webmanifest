@@ -1,0 +1,16 @@
+{
+  "name": "Animal Nations TD",
+  "short_name": "Animal Nations",
+  "description": "Tower defense 2.5D isométrique — animaux nationaux et héros mythologiques",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#0f1626",
+  "theme_color": "#0f1626",
+  "icons": [
+    { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

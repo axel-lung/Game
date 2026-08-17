@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="112" fill="#0f1626"/>
+  <!-- Tuile isométrique, avec son épaisseur : la signature visuelle du jeu. -->
+  <path d="M256 300 L432 388 L256 476 L80 388 Z" fill="#3f7d3a"/>
+  <path d="M256 268 L432 356 L256 444 L80 356 Z" fill="#67b95a"/>
+  <path d="M256 300 L336 340 L256 380 L176 340 Z" fill="#d0a86d"/>
+  <!-- Couronne : les nations, les âges. -->
+  <path d="M256 36 L300 128 L392 92 L360 212 L152 212 L120 92 L212 128 Z" fill="#ffd257"/>
+  <circle cx="256" cy="96" r="22" fill="#d8342f"/>
+  <circle cx="150" cy="128" r="16" fill="#2f5fb0"/>
+  <circle cx="362" cy="128" r="16" fill="#2f5fb0"/>
+  <rect x="152" y="228" width="208" height="34" rx="12" fill="#e0b544"/>
+</svg>

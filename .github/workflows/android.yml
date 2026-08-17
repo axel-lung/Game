@@ -1,0 +1,54 @@
+name: APK Android
+
+# Produit un APK de test installable sur téléphone.
+#
+# Le build tourne ici plutôt qu'en local parce que les runners GitHub ont déjà
+# le SDK Android : il n'y a rien à installer sur ta machine pour obtenir un APK.
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/mobile-app-specs-rwuj8x]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      # Capacitor 8 exige un JDK 21.
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Construire le bundle web
+        run: npm run build
+
+      # Le dossier android/ est régénéré à chaque build : il n'est pas versionné,
+      # ce qui évite d'avoir des centaines de fichiers générés dans le dépôt.
+      - name: Générer le projet Android
+        run: |
+          npx cap add android
+          npx cap sync android
+
+      - name: Compiler l'APK
+        working-directory: android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon
+
+      - name: Publier l'APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: animal-nations-td-debug-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 30
+          if-no-files-found: error
