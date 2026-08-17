@@ -26,6 +26,24 @@ réactivité au toucher ne se jugent que sur un vrai écran tactile.
 | `npm run build` | Typecheck + bundle de production dans `dist/` |
 | `npm run preview` | Sert le bundle de production |
 
+## Récupérer un APK Android
+
+Le plus simple : **onglet Actions du dépôt → workflow « APK Android » → dernier
+build → artefact `animal-nations-td-debug-apk`**. Décompresser le zip, envoyer
+le `.apk` sur le téléphone, l'ouvrir. Android demandera d'autoriser
+l'installation depuis cette source — c'est normal pour un APK non publié sur le
+Play Store.
+
+C'est un APK de **debug**, signé avec la clé de développement : parfait pour
+tester, mais ni optimisé ni publiable en l'état sur le Play Store.
+
+## Installer sans APK (le plus rapide)
+
+Le jeu est une PWA. Ouvrir son adresse dans le navigateur du téléphone, puis
+« Ajouter à l'écran d'accueil » : on obtient une icône et un lancement en plein
+écran paysage, sans passer par l'installation d'un APK. C'est la boucle de test
+la plus courte pendant le développement.
+
 ## Empaqueter en application native
 
 Le projet est déjà configuré pour Capacitor (`capacitor.config.ts`), qui
