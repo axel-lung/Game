@@ -1,0 +1,38 @@
+{
+  "name": "animal-nations-td",
+  "version": "0.1.0",
+  "description": "Tower defense 2.5D isométrique — animaux nationaux, héros mythologiques",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "sync": "npm run build && cap sync"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axel-lung/Game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/axel-lung/Game/issues"
+  },
+  "homepage": "https://github.com/axel-lung/Game#readme",
+  "dependencies": {
+    "phaser": "^3.90.0"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^8.5.0",
+    "@capacitor/cli": "^8.5.0",
+    "@capacitor/core": "^8.5.0",
+    "@capacitor/ios": "^8.5.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.1"
+  },
+  "type": "module",
+  "private": "true"
+}
